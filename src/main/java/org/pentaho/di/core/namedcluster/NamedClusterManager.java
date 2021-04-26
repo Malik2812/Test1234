@@ -71,23 +71,7 @@ public class NamedClusterManager {
    *
    * @return the NamedCluster template
    */
-  public NamedCluster getClusterTemplate() {
-    String localHost = "localhost";
-    if ( clusterTemplate == null ) {
-      clusterTemplate = new NamedCluster();
-      clusterTemplate.setName( "" );
-      clusterTemplate.setHdfsHost( localHost );
-      clusterTemplate.setHdfsPort( "8020" );
-      clusterTemplate.setHdfsUsername( "user" );
-      clusterTemplate.setHdfsPassword( clusterTemplate.encodePassword( "password" ) );
-      clusterTemplate.setJobTrackerHost( localHost );
-      clusterTemplate.setJobTrackerPort( "8032" );
-      clusterTemplate.setZooKeeperHost( localHost );
-      clusterTemplate.setZooKeeperPort( "2181" );
-      clusterTemplate.setOozieUrl( "http://localhost:8080/oozie" );
-    }
-    return clusterTemplate.clone();
-  }
+  
 
   /**
    * This method will set the cluster template used when creating new NamedClusters
